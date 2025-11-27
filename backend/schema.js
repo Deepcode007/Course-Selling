@@ -17,10 +17,10 @@ const userSchema= new Schema({
     password: String,
     role: { type: String, default: "user"},
     wallet: { type: Number, default:0},
-    purchasedCourses: {
+    purchasedCourses: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Course"
-    }
+    }]
 })
 
 const User = mongoose.model('User', userSchema);

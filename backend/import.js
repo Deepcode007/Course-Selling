@@ -1,6 +1,7 @@
 const express=require("express")
 const mongoose=require("mongoose")
 const jwt=require("jsonwebtoken")
+const bcrypt = require("bcrypt")
 const app=express()
 require("dotenv").config({ path: './secrets/.env' })
 
@@ -14,7 +15,6 @@ function server()
     
     app.listen(3030,()=>console.log("listening"))
 }
-const JWT_KEY=process.env.JWT_KEY
 
 
-module.exports={JWT_KEY,app, server,mongoose, jwt, Schema}
+module.exports={app, server,mongoose, jwt, Schema, bcrypt}
